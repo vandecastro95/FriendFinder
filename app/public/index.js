@@ -126,7 +126,7 @@ var json = {
       ]
     },
     {
-      title: "Could Mike Tyson, in his prime, knock out a restrained tiger?",
+      title: "Cereal is breakfast soup",
       questions: [
         {
           type: "radiogroup",
