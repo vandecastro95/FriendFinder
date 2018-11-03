@@ -29,25 +29,23 @@
     </div>
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">
-                    CLick me!
-                </button>
+    <button type="button" class="btn btn-primary btn-large hide" data-toggle="modal" data-target="#myModal"></button>
 
-                <div class="modal fade" id="mymodal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                header
-                            </div>
-                            <div class="modal-body">
-                                body
-                            </div>
-                        </div>
-
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="purchaseLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <h2>Say hello to your new BFF</h2>
+                    <div class="modal-body-content">
+                        <h1 class="bffname"></h1>
+                        <img src="" class="bffphoto">
                     </div>
+                </div>
+                <div class="modal-footer">
                 </div>
             </div>
         </div>
@@ -58,6 +56,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>

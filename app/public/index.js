@@ -5,22 +5,7 @@ var json = {
   title: "Friend Finder Survey",
   pages: [
     {
-      title: "Please enter your name and a link to your photo!",
-      questions: [
-        {
-          type: "text",
-          name: "name",
-          title: "Name:"
-        },
-        {
-          type: "text",
-          name: "photo",
-          title: "Image link"
-        }
-      ]
-    },
-    {
-      title: "What operating system do you use?",
+      title: "Pineapple has no place on a Pizza",
       questions: [
         {
           type: "radiogroup",
@@ -40,12 +25,13 @@ var json = {
       ]
     },
     {
-      title: "q1",
+      title:
+        "I believe two consenting adults should have the legal right to challenge each other to a duel, if they are so inclined, with no legal consequences for the winner.",
       questions: [
         {
           type: "radiogroup",
           name: "q2",
-          title: "Plese select from the list",
+          title: "Please select from the list",
           colCount: 5,
           isRequired: true,
           choices: [
@@ -60,12 +46,12 @@ var json = {
       ]
     },
     {
-      title: "q2",
+      title: "OJ simpson did it",
       questions: [
         {
           type: "radiogroup",
           name: "q3",
-          title: "Plese select from the list",
+          title: "Please select from the list",
           colCount: 5,
           isRequired: true,
           choices: [
@@ -80,12 +66,12 @@ var json = {
       ]
     },
     {
-      title: "q3",
+      title: "Jack could have totally fit on the door with Rose",
       questions: [
         {
           type: "radiogroup",
           name: "q4",
-          title: "Plese select from the list",
+          title: "Please select from the list",
           colCount: 5,
           isRequired: true,
           choices: [
@@ -100,12 +86,12 @@ var json = {
       ]
     },
     {
-      title: "What language(s) are you currently using?",
+      title: "Aliens Exists",
       questions: [
         {
           type: "radiogroup",
           name: "q5",
-          title: "Plese select from the list",
+          title: "Please select from the list",
           colCount: 5,
           isRequired: true,
           choices: [
@@ -120,12 +106,12 @@ var json = {
       ]
     },
     {
-      title: "What language(s) are you currently using?",
+      title: "Dogs make better pets that cats",
       questions: [
         {
           type: "radiogroup",
           name: "q6",
-          title: "Plese select from the list",
+          title: "Please select from the list",
           colCount: 5,
           isRequired: true,
           choices: [
@@ -140,12 +126,12 @@ var json = {
       ]
     },
     {
-      title: "What language(s) are you currently using?",
+      title: "Could Mike Tyson, in his prime, knock out a restrained tiger?",
       questions: [
         {
           type: "radiogroup",
           name: "q7",
-          title: "Plese select from the list",
+          title: "Please select from the list",
           colCount: 5,
           isRequired: true,
           choices: [
@@ -160,12 +146,12 @@ var json = {
       ]
     },
     {
-      title: "What language(s) are you currently using?",
+      title: "Is a hot dog a sandwich?",
       questions: [
         {
           type: "radiogroup",
           name: "q8",
-          title: "Plese select from the list",
+          title: "Please select from the list",
           colCount: 5,
           isRequired: true,
           choices: [
@@ -180,12 +166,12 @@ var json = {
       ]
     },
     {
-      title: "What language(s) are you currently using?",
+      title: "Are we living in a simulation?",
       questions: [
         {
           type: "radiogroup",
           name: "q9",
-          title: "Plese select from the list",
+          title: "Please select from the list",
           colCount: 5,
           isRequired: true,
           choices: [
@@ -200,12 +186,12 @@ var json = {
       ]
     },
     {
-      title: "What language(s) are you currently using?",
+      title: "Crunchy peanut butter is better that smooth peanut butter",
       questions: [
         {
           type: "radiogroup",
           name: "q10",
-          title: "Plese select from the list",
+          title: "Please select from the list",
           colCount: 5,
           isRequired: true,
           choices: [
@@ -216,6 +202,21 @@ var json = {
             { value: 5, text: "Strongly Agree" }
           ],
           renderAs: "prettycheckbox"
+        }
+      ]
+    },
+    {
+      title: "Please enter your name and a link to your photo!",
+      questions: [
+        {
+          type: "text",
+          name: "name",
+          title: "Name:"
+        },
+        {
+          type: "text",
+          name: "photo",
+          title: "Image link"
         }
       ]
     }
@@ -228,25 +229,32 @@ survey.onComplete.add(function(result) {
   //result.data is the results object
   console.log(result.data);
   let scores = [
-    (result.data.q1),
-    (result.data.q2),
-    (result.data.q3),
-    (result.data.q4),
-    (result.data.q5),
-    (result.data.q6),
-    (result.data.q7),
-    (result.data.q8),
-    (result.data.q9),
-    (result.data.q10)
+    result.data.q1,
+    result.data.q2,
+    result.data.q3,
+    result.data.q4,
+    result.data.q5,
+    result.data.q6,
+    result.data.q7,
+    result.data.q8,
+    result.data.q9,
+    result.data.q10
   ];
-  
+
   let userData = {
     name: result.data.name,
     photo: result.data.photo,
-    scores: scores,
+    scores: scores
   };
 
-  $.post("/api/friends", userData);
+  $.post("/api/friends", userData, function(data) {
+    console.log("data", data);
+
+    $(".bffname").text(data.name);
+    $(".bffphoto").attr("src", data.photo);
+    $("#myModal").show("fast");
+    $("#myModal").modal('toggle');
+  });
 });
 
 survey.showProgressBar = "bottom";

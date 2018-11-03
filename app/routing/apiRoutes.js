@@ -32,8 +32,12 @@ module.exports = function(app) {
 
     let newBestfriend = friendData[bestfriendIndex];
     console.log("scoresdifference", scoresArr);
+    let bffHtml = `<h1> Say hello to your new Best Friend </h1> 
+    
+    <h1> ${newBestfriend.name} </h1> 
+    
+    <img src="${newBestfriend.photo}" alt="Smiley face" height="42" width="42">`;
 
-    console.log(newBestfriend);
-    res.json(true);
+    res.json(newBestfriend);
   });
 };
