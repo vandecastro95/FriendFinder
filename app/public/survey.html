@@ -25,11 +25,11 @@
 <body>
     <div class="container mt-5 bg-white">
         <div class="h2 surveyElement" id="surveyElement"></div>
-        <div id="surveyResult"></div>
+        <div id="surveyResult" class="text-center text-warning"></div>
     </div>
 
 
-    <button type="button" class="btn btn-primary btn-large hide" data-toggle="modal" data-target="#myModal"></button>
+    <button type="button" class="btn btn-warning btn-large hide hiddenBtn" data-toggle="modal" data-target="#myModal">MY BFF</button>
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -41,8 +41,8 @@
                 <div class="modal-body">
                     <h2>Say hello to your new BFF</h2>
                     <div class="modal-body-content">
-                        <h1 class="bffname"></h1>
-                        <img src="" class="bffphoto">
+                        <h1 class="bffname text-center text-warning display-1"></h1>
+                        <img src="" class="bffphoto" width="200" height="250">
                     </div>
                 </div>
                 <div class="modal-footer">

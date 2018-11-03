@@ -252,12 +252,12 @@ survey.onComplete.add(function(result) {
 
     $(".bffname").text(data.name);
     $(".bffphoto").attr("src", data.photo);
-    $("#myModal").show("fast");
-    $("#myModal").modal('toggle');
+    $(".hiddenBtn").removeClass("hide");
   });
 });
 
 survey.showProgressBar = "bottom";
+survey.completedHtml = "Thank you for completing the survey! Click to meet your new Bestfriend"
 
 $("#surveyElement").Survey({ model: survey });
 

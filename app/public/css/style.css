@@ -25,6 +25,18 @@ body {
   background-size: 100%;
 }
 
+.colorCyan {
+  color: lightcyan;
+}
+
+.hiddenBtn {
+  position: absolute;
+  top: 28%;
+  right: 15%;
+  padding: 15  px;
+  font-size: 20px;
+}
+
 .name {
   color: lightgoldenrodyellow;
   font-size: 100px;
