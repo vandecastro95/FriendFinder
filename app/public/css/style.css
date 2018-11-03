@@ -1,0 +1,85 @@
+body {
+  background: lightcyan;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px; /* remove scrollbar space */
+  background: transparent; /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
+.ParallaxContainer {
+  display: flex;
+  flex: 1 0 auto;
+  position: relative;
+  z-index: -1;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(-1px) scale(2);
+  background: url("background.jpg") no-repeat center center;
+  background-size: 100%;
+}
+
+.name {
+  color: lightgoldenrodyellow;
+  font-size: 100px;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.name:hover {
+  transition: padding 0.2s ease-in-out;
+  color: lightgoldenrodyellow;
+  /* background: url("background.jpg") no-repeat center; */
+  padding-bottom: 550px;
+}
+
+/* .name:hover::after {
+  position: absolute;
+  text-align: left;
+  color: lightgreen;
+  font-size: 100px;
+  font-weight: bold;
+  content: "CLICK HERE \A   TO  \A START!";
+  white-space: pre;
+} */
+
+.makeReservation {
+  color: white;
+  background: black;
+}
+
+.buttons {
+  margin-bot: 20px;
+}
+
+.MainContainer {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.surveyContainer {
+}
+
+.surveyElement {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+
+  margin: 0 auto;
+  width: 75%;
+  background: white;
+}
+
+a:hover {
+  text-decoration: none;
+}
