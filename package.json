@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/vandecastro95/FriendFinder#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.1.3",
     "express": "^4.16.4",
     "jquery": "^3.3.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pretty-checkbox": "^3.0.3"
   }
 }
